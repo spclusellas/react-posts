@@ -8,17 +8,21 @@
     width: 60%;
 }
 
+.spinner-art{
+    margin: 0 auto;
+}
+
 @media(min-width:768px){
    .cards-section{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 10% auto 5% auto;
+    margin: 10% auto 2% auto;
    }
 }
 
 @media(min-width:1024px){
     .cards-section{
-     margin: 8% auto 5% auto;
+     margin: 8% auto 2% auto;
     }
  }
