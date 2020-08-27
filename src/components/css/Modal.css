@@ -1,0 +1,15 @@
+h3.modal-title{
+    font-weight: bolder;
+}
+h3.modal-title::first-letter{
+    text-transform: uppercase;
+}
+
+p.post-body{
+    margin-top: 3px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+p.post-body:first-letter{
+    text-transform: uppercase;
+}

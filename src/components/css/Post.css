@@ -1,0 +1,37 @@
+.post-article{
+    background-color: #2f2c2c;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post-title{
+    border-bottom: grey solid 1px;
+}
+.post-title h3{
+    font-size: 1.2em;
+}
+.post-title h3:first-letter{
+    text-transform: uppercase;
+}
+
+.read-more-button{
+    justify-self: flex-end;
+}
+
+@media(min-width: 768px){
+    .post-article{
+        width: 45%;
+    }
+}
+
+@media(min-width:1024px){
+    .post-article{
+        width: 30%;
+    }
+}
