@@ -8,9 +8,11 @@
     width: 100%;
     z-index: 2;
 }
-
+a.logo-link{
+    width: 30%;
+}
 .nav-logo{
-    width: 20%;
+    width: 100%;
 }
 
 .navbar-app nav{
@@ -31,4 +33,16 @@
 .nav-item a{
     color: white;
     font-size: 1.3rem;
+}
+
+@media(min-width:768px){
+    a.logo-link{
+        width: 20%;
+    }
+}
+
+@media(min-width:1024px){
+    a.logo-link{
+        width: 15%;
+    }
 }

@@ -1,6 +1,6 @@
 .cards-section{
     width: 85%;
-    margin: 10% auto 5% auto;
+    margin: 20% auto 5% auto;
 }
 
 .load-more-div{
@@ -13,5 +13,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 10% auto 5% auto;
    }
 }
+
+@media(min-width:1024px){
+    .cards-section{
+     margin: 8% auto 5% auto;
+    }
+ }
