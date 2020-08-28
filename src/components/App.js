@@ -20,19 +20,17 @@ function App() {
             .then((res) => res.json())
             .then((images) => {
                 setPost({posts: posts, images: images})
-                console.log(posts)
             })
         })
 }, [])
 
-console.log(posts)
   return (
     <div className="App">
       
       <Navbar />
       <SearchPost posts={posts}/>
       <h2 className="all-post">All Posts</h2>
-      <Card />
+      <Card posts={posts}/>
       <Footer />
     </div>
   );

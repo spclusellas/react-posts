@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 import './css/Modal.css'
 
 function ModalExpand(props) {
-  console.log(props)
     return (
       <Modal
         {...props}

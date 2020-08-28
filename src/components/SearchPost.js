@@ -9,12 +9,13 @@ function SearchForm(props){
 
     const [searchResult, setSearchResults] = useState(false)
     const [visible, setVisible] = useState(3)
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
         let searchResults = props.posts.posts.filter(post => {
             return post.title.includes(data.title)
         })
+        setVisible(3)
         setSearchResults(searchResults)
     };
 
@@ -42,7 +43,7 @@ function SearchForm(props){
         return (
             <div className="control-result">
                 <Alert  variant={'dark'}>
-                    You are watching <b>{visible}</b> from <b>{searchResult.length}</b> results
+                    <b>{searchResult.length}</b> RESULTS
                 </Alert>
                 <Button variant="outline-info" size="md" block onClick={loadMore}>
                     Show More
