@@ -9,7 +9,7 @@ import Spinner from 'react-bootstrap/Spinner'
 
 
 function Card(){
-    const [posts, setPost] = useState([])
+    const [posts, setPost] = useState({posts: [], images: []})
     const [visible, setVisible] = useState(6)
     const [loading, setLoading] = useState(false)
 
@@ -17,8 +17,14 @@ function Card(){
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then((response)=>response.json())
             .then((posts) => {
-                setPost(posts)
+                fetch('https://picsum.photos/v2/list?page=2&limit=100')
+                .then((res) => res.json())
+                .then((images) => {
+                    setPost({posts: posts, images: images})
+                    console.log(posts)
+                })
             })
+            
             setLoading(true)
     }, [])
 
@@ -27,6 +33,7 @@ function Card(){
                 <Post 
                     body={data.body}
                     title={data.title}
+                    images={data.url}
                     key={data.id}
                 />
         )
@@ -39,7 +46,7 @@ function Card(){
     return(
         <div>
             <section className="cards-section">
-                {loading ? posts.slice(0, visible).map(postMap) : <Spinner className="spinner-art" animation="border" role="status"><span className="sr-only">Loading...</span></Spinner> }
+                {loading ? posts.posts.slice(0, visible).map(postMap) : <Spinner className="spinner-art" animation="border" role="status"><span className="sr-only">Loading...</span></Spinner> }
             </section>
             <div className="load-more-div">
                 <Button variant="outline-dark" size="lg" block onClick={loadMore}>

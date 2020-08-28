@@ -1,0 +1,9 @@
+   .all-post {
+       text-align: center;
+       background-color: #302c2c;
+       width: 90%;
+       margin: 10px auto;
+       border-radius: 18px;
+       color: white;
+       padding: 8px;
+   }
