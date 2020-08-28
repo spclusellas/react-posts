@@ -30,12 +30,12 @@ function SearchForm(props){
     }
 
     function loadMore(){
-        setVisible(visible + 6)
+        setVisible(visible + 3)
     }
 
     function cleanResults(){
         setSearchResults(false)
-        setVisible(6)
+        setVisible(3)
     }
 
     function controlResult(){
