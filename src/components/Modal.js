@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import './css/Modal.css'
 
 function ModalExpand(props) {
+  console.log(props)
     return (
       <Modal
         {...props}
@@ -14,6 +15,7 @@ function ModalExpand(props) {
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
             <h3 className="modal-title">{props.title}</h3>
+            <img src={props.image.download_url} alt="img_modal" className="image_modal"></img>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>

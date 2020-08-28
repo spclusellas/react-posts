@@ -28,13 +28,15 @@ function Card(){
             setLoading(true)
     }, [])
 
-    function postMap(data){
+    function postMap(data, i){
         return(
                 <Post 
+                    id = {data.id}
                     body={data.body}
                     title={data.title}
                     images={data.url}
                     key={data.id}
+                    image={posts.images[i]}
                 />
         )
     }

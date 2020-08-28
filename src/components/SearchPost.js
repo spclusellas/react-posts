@@ -12,18 +12,18 @@ function SearchForm(props){
     const { register, handleSubmit, watch, errors } = useForm();
 
     const onSubmit = data => {
-        let searchResults = props.posts.filter(post => {
+        let searchResults = props.posts.posts.filter(post => {
             return post.title.includes(data.title)
         })
         setSearchResults(searchResults)
     };
 
-    function showSearchResults(data){
+    function showSearchResults(data, i){
         return (
             <Post 
                 body={data.body}
                 title={data.title}
-                images={data.url}
+                image={props.posts.images[i]}
                 key={data.id}
             />
         )
@@ -57,8 +57,6 @@ function SearchForm(props){
     return(
         <div className="search-section">
             <form onSubmit={handleSubmit(onSubmit)}>
-                {/* <FormControl type="text" placeholder="Search" className="mr-lg-2" ref={register} />
-                <Button type='submit' variant="outline-success">Search</Button> */}
                 <input type="text" name="title" ref={register}></input>
                 <button type='submit'>Search</button>
             </form>

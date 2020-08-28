@@ -10,13 +10,18 @@ import './css/App.css'
 
 function App() {
   
-  const [posts, setPost] = useState([])
+  const [posts, setPost] = useState({posts: [], images: []})
 
   useEffect(()=>{
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then((response)=>response.json())
         .then((posts) => {
-            setPost(posts)
+            fetch('https://picsum.photos/v2/list?page=2&limit=100')
+            .then((res) => res.json())
+            .then((images) => {
+                setPost({posts: posts, images: images})
+                console.log(posts)
+            })
         })
 }, [])
 

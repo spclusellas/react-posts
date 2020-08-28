@@ -20,8 +20,10 @@ function Post(props){
             <Modal
                 title={props.title}
                 body={props.body}
+                image = {props.image}
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+                key={props.id}
             />
         </article>
     )
